@@ -2,25 +2,99 @@
 
 ## Project: GitHub Repository Finder
 
-### 1. Understanding the CLI
-Challenge: Initially, understanding the available Swytchcode commands and API method structure was difficult.
-Resolution: Used CLI help commands and inspected the GitHub provider documentation and method schema.
+### 1. Understanding the Swytchcode CLI
 
-### 2. Configuring the API
-Challenge: The GitHub repository search method needed to be enabled and the integration endpoint configured.
-Resolution: Updated the Swytchcode tooling and integration configuration.
+**Attempt:** Installed and explored the Swytchcode CLI to understand its available commands and functionality.
 
-### 3. Authentication
-Challenge: GitHub access required an authenticated connection.
-Resolution: Completed the GitHub OAuth2 connection through Swytchcode.
+**Challenge:** Initially, it was difficult to understand the CLI command structure and how integrations and API methods worked.
+
+**What I tried next:** Used CLI help information and explored the available GitHub integration methods.
+
+**Resolution:** Understood how to inspect and execute API operations through Swytchcode.
+
+**Status:** Resolved.
+
+### 2. Configuring the GitHub Integration
+
+**Attempt:** Explored the GitHub provider and enabled the repository search operation.
+
+**Challenge:** The required API method and integration endpoint needed to be configured correctly.
+
+**What I tried next:** Inspected the generated configuration files and updated the relevant Swytchcode configuration.
+
+**Resolution:** Enabled `github.repository.list2` and configured the GitHub API endpoint.
+
+**Status:** Resolved.
+
+### 3. GitHub Authentication
+
+**Attempt:** Connected the GitHub integration through Swytchcode.
+
+**Challenge:** The API operation required an authenticated GitHub connection.
+
+**What I tried next:** Followed the OAuth2 authentication process provided by Swytchcode.
+
+**Resolution:** Successfully connected GitHub. The CLI confirmed: `Connected github (oauth2).`
+
+**Status:** Resolved.
 
 ### 4. Understanding API Parameters
-Challenge: The repository search operation required parameters such as q, sort, order, and per_page.
-Resolution: Inspected the method schema and supplied the required and optional parameters.
 
-### 5. Handling Large API Responses
-Challenge: The initial API response contained a large amount of JSON data, making it difficult to read.
-Resolution: Updated the PowerShell script to parse the JSON and display only repository names, descriptions, star counts, and URLs.
+**Attempt:** Inspected the schema of `github.repository.list2`.
 
-### Final Result
-The GitHub Repository Finder successfully executed the GitHub API operation and returned HTTP 200. The final script displays the top five matching repositories in a readable format.
+**Challenge:** Needed to understand the required search query and optional parameters.
+
+**What I tried next:** Examined the method parameters, including `q`, `sort`, `order`, and `per_page`.
+
+**Resolution:** Understood the parameters and used them in the API execution command.
+
+**Command executed:**
+
+```powershell
+& "$env:LOCALAPPDATA\Programs\swytchcode\bin\swytchcode.exe" exec github.repository.list2 --param "q=react" --param "sort=stars" --param "order=desc" --param "per_page=5" --json
+```
+
+**Actual result:** Received a successful HTTP 200 response containing GitHub repository information.
+
+**Status:** Resolved.
+
+### 5. Handling Large JSON Responses
+
+**Attempt:** Executed the GitHub repository search operation.
+
+**Challenge:** The raw JSON response contained a large amount of information and was difficult to read.
+
+**What I tried next:** Created a PowerShell script to process the JSON response.
+
+**Resolution:** Developed `github-finder.ps1`, which accepts a search keyword and displays the top five repositories with their names, descriptions, star counts, and URLs.
+
+**Command used to run the script:**
+
+```powershell
+.\github-finder.ps1
+```
+
+**Actual result:** The script successfully displayed repository information in a readable format.
+
+**Status:** Resolved.
+
+### 6. AI Assistance
+
+**Tool used:** ChatGPT.
+
+**How it was used:**
+- Understanding Swytchcode CLI commands and API methods.
+- Troubleshooting configuration and execution steps.
+- Understanding API parameters.
+- Developing and improving the PowerShell script.
+- Preparing project documentation and the marketing asset.
+
+**Result:** AI assistance helped me understand unfamiliar concepts and complete the project step by step. I executed and tested the API operation and script myself.
+
+### 7. Final Outcome
+
+Successfully built a GitHub Repository Finder using Swytchcode CLI and the GitHub REST API.
+
+The project demonstrates how Swytchcode can simplify API integration and execution through a command-line interface.
+
+The API operation returned HTTP 200, and the PowerShell application successfully displayed the top five matching repositories.
