@@ -42,3 +42,25 @@ The API returned HTTP status code 200 during testing.
 
 ## Project Purpose
 This project demonstrates how Swytchcode simplifies API integration and allows developers to execute API operations through a CLI.
+
+## Demo Video
+
+Watch the project demonstration here:
+
+[GitHub Repository Finder – Demo Video](https://drive.google.com/file/d/1uH_WqikyPXm-QGASdm9loT6qCBVqG6kJ/view?usp=sharing)
+
+## Generated Wrekenfile
+
+The generated `wrekenfile.yaml` is included in this repository. It contains the GitHub integration's API operation definitions and execution information explored during this project.
+
+## Technologies and Tools Used
+
+- Swytchcode CLI
+- GitHub REST API
+- PowerShell
+- JSON
+
+## AI Assistance
+
+ChatGPT was used for step-by-step technical guidance, troubleshooting, understanding API operations, and documentation support. Canva AI was used to assist with creating the marketing poster. I tested the project and verified the API execution myself.
+
